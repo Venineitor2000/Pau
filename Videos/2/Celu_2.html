@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" &amp;gt; charset="utf-8">
+    <title>Videos</title>
+    <style media="screen">
+        p {
+            color: gold;
+            text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            font-size: 200%;
+        }
+
+        body {
+            background: radial-gradient(cyan, blue);
+            animation-name: Animacion;
+            animation-duration: 5s;
+            margin: 0;
+        }
+
+        video {
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+        }
+
+        #boton_2 {
+            color: yellow;
+            background: radial-gradient(pink, red);
+            font-size: 100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
+        #boton_1 {
+            color: yellow;
+            background: radial-gradient(pink, red);
+            font-size: 200%;
+            display: table-cell;
+            vertical-align: middle;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
+        @keyframes Animacion {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="texto_1">
+        <br>Hola pau, bueno primero feliz cumpleaños!!!! Espero q tengas un hermoso día porque te lo re mereces y estoy re contenta de q este año estés acá jejeje. Nada vos sabes que no sirvo para expresarme, como también sabes q sos muy importante y especial para mi, posta que estoy muy contenta y agradecida de que la vida nos termino crusando de alguna forma u otra, tardamos en conocernos pero yo siempre pienso que si tardamos es por algo y si nos tuvimos q conocer también (espero q vos también estés contenta jejeje). También espero q como te digo feliz cumple hoy con 22 años lo siga haciendo todos los años hasta q seamos unas viejas jugando al burako y tus tetas sigan siempre en la misma posición sin importar los años. Espero q pases el mejor de los cumpleaños y seas muy feliz, que sea un año hermoso y q estés siempre rodeada de gente q te quiere para q sigas sonriendo como haces siempre. Bueno nada creo q esto expresa mucho lo especial q sos para mi, te quiero muchísimo Pau ❤️ <br><br>Felices 22 añitos ya estás un año más vieja, no te olvides de fijarte si te salió una arruga nueva o cana, te adoro pauli y no sé si esto lo lees antes de vernos o desps jejeje , si es antes te digo nos vemos en un rato y si es desps que termines hermoso tu día que te lo re mereces. <br><br>PD: te dejo unas fotitos que no me voy a cansar de ver nunca, mi negra y yo blanca, vos riéndote de mis caras❤️😁🥰😘<br>
+
+    </p>
+    <input type="button" value="Final" onclick="abrir_1()" id="boton_1">
+    <p id="texto_2"><br><br><br><br><br><br><br><p>
+    <p id="texto_3"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>
+        <video src="Video.mp4" preload=auto id="video"></video>
+        <input type="button" value="Inicio" onclick="abrir_2()" id="boton_2">
+        <script>
+            var parar = false;
+            document.getElementById("texto_3").style.display = "none";
+            document.getElementById("video").style.display = "none";
+            document.getElementById("boton_2").style.display = "none";
+            function abrir_1() {
+                document.getElementById("texto_1").style.display = "none";
+                document.getElementById("texto_2").style.display = "none";
+                document.getElementById("video").style.display = "inline";
+                document.getElementById("boton_1").style.display = "none";
+                document.getElementById("video").play();
+            }
+            function abrir_2() {
+                location.href = "../../More_Inicio/Celu.html";
+            }
+
+            function comprobar() {
+                if (document.getElementById("video").duration == document.getElementById("video").currentTime && parar == false) {
+                    parar = true;
+                    document.getElementById("video").style.display = "none";
+                    document.getElementById("boton_2").style.display = "inline";
+                    document.getElementById("texto_3").style.display = "inline";
+                }
+            }
+            setInterval(comprobar, 500);
+
+
+        </script>
+</body>
+</html>

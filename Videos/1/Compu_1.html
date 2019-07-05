@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" &amp;gt; charset="utf-8">
+    <title>Videos</title>
+    <style media="screen">
+        p {
+            color: gold;
+            text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            font-size: 400%;
+        }
+
+        body {
+            background: radial-gradient(cyan, blue);
+            animation-name: Animacion;
+            animation-duration: 5s;
+            margin: 0;
+        }
+
+        video {
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+        }
+
+        #boton_2 {
+            color: yellow;
+            background: radial-gradient(pink, red);
+            font-size: 100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
+        #boton_1 {
+            color: yellow;
+            background: radial-gradient(pink, red);
+            font-size: 200%;
+            display: table-cell;
+            vertical-align: middle;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+
+        @keyframes Animacion {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p id="texto_1">
+        Lo que quieras poner
+    </p>
+    <input type="button" value="Final" onclick="abrir_1()" id="boton_1">
+    <p id="texto_2"><br><br><br><br><br><br><br><p>
+    <p id="texto_3"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>
+        <video src="Video.mp4" preload=auto id="video"></video>
+        <input type="button" value="Inicio" onclick="abrir_2()" id="boton_2">
+        <script>
+            var parar = false;
+            document.getElementById("texto_3").style.display = "none";
+            document.getElementById("video").style.display = "none";
+            document.getElementById("boton_2").style.display = "none";
+            function abrir_1() {
+                document.getElementById("texto_1").style.display = "none";
+                document.getElementById("texto_2").style.display = "none";
+                document.getElementById("video").style.display = "inline";
+                document.getElementById("boton_1").style.display = "none";
+                document.getElementById("video").play();
+            }
+            function abrir_2() {
+                location.href = "../../PRIMER MENSAJE/Compu.html";
+            }
+
+            function comprobar() {
+                if (document.getElementById("video").duration == document.getElementById("video").currentTime && parar == false) {
+                    parar = true;
+                    document.getElementById("video").style.display = "none";
+                    document.getElementById("boton_2").style.display = "inline";
+                    document.getElementById("texto_2").style.display = "inline";
+                }
+            }
+            setInterval(comprobar, 500);
+
+
+        </script>
+</body>
+</html>

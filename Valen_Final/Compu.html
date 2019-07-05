@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"&amp;gt; charset="utf-8">
+    <title>Carta</title>
+    <style media="screen">
+      p
+      {
+        color: gold;
+        text-align: center;
+        text-shadow:
+         -1px -1px 0 #000,
+          1px -1px 0 #000,
+         -1px 1px 0 #000,
+          1px 1px 0 #000;
+          font-size:400%;
+      }
+      body
+      {
+        background: radial-gradient(cyan, blue);
+        animation-name: Animacion;
+        animation-duration: 5s;
+      }
+
+        input {
+            color: yellow;
+            background: radial-gradient(pink, red);
+            font-size: 200%;
+            display: table-cell;
+            vertical-align: middle;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        }
+      @keyframes Animacion{0% {opacity: 0;}100% {opacity: 1;}}
+    </style>
+  </head>
+  <body>
+      <p>
+          <br>Feliz cumpleaños amiga!! Me alegra que al fin podamos pasarlo juntas! Te deseo lo mejor hoy y siempre. Te quiero mucho ❤<br>
+      </p>
+    <input type="button" name="Leer parte 2" value="Ine" onclick="Abrir()">
+    <p><br><br><br><br><br><br><br><p>
+      <script src="../Contador.js"></script>
+      <script>
+      function Abrir()
+      {
+        //Una vez pasa alguna fecha, ya la borro de aca y la sumo directo a la version de defecto que seria la que estamos solo yo papa y mama
+        //Una vez ya hayan pasado las 2 fechas especiales, simplemente pongo que se redirija directo al video que salen todos
+          if (dias_faltantes == 0 && hora_actual >= hora_deseada[fecha_proxima])
+        {
+          switch (dia_deseado[fecha_proxima])
+          {
+            case dia_deseado[0]://Direccion video correspondiente a la fecha, puede ser primos o amigas
+            location.href ="../Videos/2/Compu_2.html";
+              break;
+              case dia_deseado[1]://Direccion video correspondiente a la fecha, puede ser primos o amigas
+              location.href ="../Videos/3/Compu_3.html";
+                break;
+          }
+        }
+        else
+        {
+          //Direccion video yo papa mama solos, aca tengo que ir sumando a los demas a medida q van pasando las otras fechas
+          location.href ="../Videos/1/Compu_1.html";
+        }
+      }
+      </script>
+  </body>
+</html>
